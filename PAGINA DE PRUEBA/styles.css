@@ -1,0 +1,395 @@
+/* navegacion principal */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 20px;
+    height: 3px;
+    background-color: magenta;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: magenta;
+}
+
+.highlighted {
+    color: magenta;
+}
+
+.highlighted-contact {
+    color: purple;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+.options a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.icon-settings, .icon-refresh {
+    font-size: 1.2em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #666;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .navbar {
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+body.dark-mode .menu li a {
+    color: white;
+}
+
+body.dark-mode .highlighted {
+    color: #ff00ff;
+}
+
+body.dark-mode .highlighted-contact {
+    color: #cc00cc;
+}
+
+body.dark-mode .logo a {
+    color: white;
+}
+
+body.dark-mode .options a {
+    color: white;
+}
+
+/**********************/
+
+/* titulo principal */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.left-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+    margin-left: 80px;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    color: #707070;
+    margin-bottom: 2rem;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.cta-button {
+    background-color: #ff00ff;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #ff00ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 50px;
+}
+
+.cta-button:hover {
+    background-color: #e600e6;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.icon {
+    width: 20px;
+    vertical-align: middle;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #707070;
+}
+
+.right-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 600px;
+}
+
+/***********/
+
+
+/* quienes somos */
+
+
+.related-articles {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.related-articles h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    margin-top: 70px;
+}
+
+.articles-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.article {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 30%;
+    min-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    margin-top: 40px;
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+}
+
+.article h3 {
+    font-size: 1.2em;
+    margin: 15px;
+    color: #333;
+}
+
+.article p {
+    font-size: 0.9em;
+    margin: 0 15px 15px;
+    color: #666;
+}
+
+.article:hover {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .articles-container {
+        flex-direction: column;
+    }
+
+    .article {
+        max-width: 100%;
+    }
+}
+
+/***********/
+
+
+/* iconos de lenguajes de back end */
+
+.contenedor-imagen-logos-backend{
+    margin-top: 50px;
+    margin-left: 160px;
+}
+
+
+/***********/
+
+/* contactanos */
+
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 430px;
+    margin-top: 60px;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info input {
+    width: 48%;
+}
+
+textarea {
+    resize: none;
+}
+
+.politica {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.politica input {
+    margin-right: 10px;
+}
+
+.politica a {
+    color: blue;
+    text-decoration: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+/**********/
+
+/* footer de la pagina */
+
+footer{
+    background-color: black;
+    width: 100%;
+    height: 150px;
+}
+
+/**********/
